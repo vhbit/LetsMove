@@ -21,7 +21,7 @@
 	// this call will never return. Therefore you can suppress
 	// any first run UI by putting it after this call.
 	
-	PFMoveToApplicationsFolderIfNecessary();
+	PFMoveToApplicationsFolderIfNecessary(nil);
 	
 	[window center];
 	[window makeKeyAndOrderFront:self];

@@ -7,51 +7,88 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		1DDD58160DA1D0A300B32029 /* MainMenu.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1DDD58140DA1D0A300B32029 /* MainMenu.xib */; };
 		256AC3DA0F4B6AC300CF3369 /* LetsMoveAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 256AC3D90F4B6AC300CF3369 /* LetsMoveAppDelegate.m */; };
 		6317AB1E1068842E000355D9 /* Security.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6317AB1D1068842E000355D9 /* Security.framework */; };
-		8D11072B0486CEB800E47090 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 089C165CFE840E0CC02AAC07 /* InfoPlist.strings */; };
 		8D11072D0486CEB800E47090 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 29B97316FDCFA39411CA2CEA /* main.m */; settings = {ATTRIBUTES = (); }; };
 		8D11072F0486CEB800E47090 /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1058C7A1FEA54F0111CA2CBB /* Cocoa.framework */; };
-		A10D5AD3106C082200E53420 /* MoveApplication.strings in Resources */ = {isa = PBXBuildFile; fileRef = A10D5AD1106C082200E53420 /* MoveApplication.strings */; };
-		A120E7F810630B160045BE3F /* PFMoveApplication.m in Sources */ = {isa = PBXBuildFile; fileRef = A120E7F710630B160045BE3F /* PFMoveApplication.m */; };
-		A12AF6B1136E7D0100F0BC7D /* NSString+SymlinksAndAliases.m in Sources */ = {isa = PBXBuildFile; fileRef = A12AF6B0136E7D0100F0BC7D /* NSString+SymlinksAndAliases.m */; };
+		C4DDD8E41892B28C00FCACF5 /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C4DDD8E31892B28C00FCACF5 /* Cocoa.framework */; };
+		C4DDD9081892B2B000FCACF5 /* PFMoveApplication.m in Sources */ = {isa = PBXBuildFile; fileRef = A120E7F710630B160045BE3F /* PFMoveApplication.m */; };
+		C4DDD9091892B2B500FCACF5 /* NSString+SymlinksAndAliases.m in Sources */ = {isa = PBXBuildFile; fileRef = A12AF6B0136E7D0100F0BC7D /* NSString+SymlinksAndAliases.m */; };
+		C4DDD90A1892B2DC00FCACF5 /* PFMoveApplication.h in Headers */ = {isa = PBXBuildFile; fileRef = A120E7F610630B160045BE3F /* PFMoveApplication.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		C4DDD90D1892B31D00FCACF5 /* Security.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C4DDD90C1892B31D00FCACF5 /* Security.framework */; };
+		C4E15663189ABDCB0083864B /* MoveApplication.strings in Resources */ = {isa = PBXBuildFile; fileRef = C4E15661189ABDCB0083864B /* MoveApplication.strings */; };
+		C4E8788718995000005BFCF5 /* PFMoveApplication.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C4DDD8E21892B28C00FCACF5 /* PFMoveApplication.framework */; };
+		C4E8788918995035005BFCF5 /* PFMoveApplication.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = C4DDD8E21892B28C00FCACF5 /* PFMoveApplication.framework */; };
+		C4E90325189ABD3D00B37DC5 /* LetsMove-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = C4E90324189ABD3D00B37DC5 /* LetsMove-Info.plist */; };
+		C4E9032B189ABD4500B37DC5 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = C4E90326189ABD4500B37DC5 /* InfoPlist.strings */; };
+		C4E9032C189ABD4500B37DC5 /* MainMenu.xib in Resources */ = {isa = PBXBuildFile; fileRef = C4E90328189ABD4500B37DC5 /* MainMenu.xib */; };
+		C4E9032F189ABD7200B37DC5 /* LetsMoveApp-Prefix.pch in Headers */ = {isa = PBXBuildFile; fileRef = C4E9032D189ABD7200B37DC5 /* LetsMoveApp-Prefix.pch */; };
 /* End PBXBuildFile section */
 
+/* Begin PBXContainerItemProxy section */
+		C4E8788518994FEF005BFCF5 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 29B97313FDCFA39411CA2CEA /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = C4DDD8E11892B28C00FCACF5;
+			remoteInfo = PFMoveApplication;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		C4E878881899502A005BFCF5 /* CopyFiles */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+				C4E8788918995035005BFCF5 /* PFMoveApplication.framework in CopyFiles */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
 /* Begin PBXFileReference section */
-		0115ACB116F0A5170050AD83 /* ko */ = {isa = PBXFileReference; fileEncoding = 10; lastKnownFileType = text.plist.strings; name = ko; path = ko.lproj/MoveApplication.strings; sourceTree = "<group>"; };
-		089C165DFE840E0CC02AAC07 /* English */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.strings; name = English; path = English.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		1058C7A1FEA54F0111CA2CBB /* Cocoa.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Cocoa.framework; path = /System/Library/Frameworks/Cocoa.framework; sourceTree = "<absolute>"; };
 		13E42FB307B3F0F600E4EEF1 /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = /System/Library/Frameworks/CoreData.framework; sourceTree = "<absolute>"; };
-		1DDD58150DA1D0A300B32029 /* English */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = English; path = English.lproj/MainMenu.xib; sourceTree = "<group>"; };
-		256AC3D80F4B6AC300CF3369 /* LetsMoveAppDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LetsMoveAppDelegate.h; sourceTree = "<group>"; };
-		256AC3D90F4B6AC300CF3369 /* LetsMoveAppDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LetsMoveAppDelegate.m; sourceTree = "<group>"; };
-		256AC3F00F4B6AF500CF3369 /* LetsMove_Prefix.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LetsMove_Prefix.pch; sourceTree = "<group>"; };
-		257C4710141B40250087919D /* zh-Hans */ = {isa = PBXFileReference; fileEncoding = 10; lastKnownFileType = text.plist.strings; name = "zh-Hans"; path = "zh-Hans.lproj/MoveApplication.strings"; sourceTree = "<group>"; };
-		29B97316FDCFA39411CA2CEA /* main.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		256AC3D90F4B6AC300CF3369 /* LetsMoveAppDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = LetsMoveAppDelegate.m; path = TestApp/LetsMoveAppDelegate.m; sourceTree = "<group>"; };
+		256AC3F00F4B6AF500CF3369 /* LetsMove_Prefix.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = LetsMove_Prefix.pch; path = TestApp/LetsMove_Prefix.pch; sourceTree = "<group>"; };
+		29B97316FDCFA39411CA2CEA /* main.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = main.m; path = TestApp/main.m; sourceTree = "<group>"; };
 		29B97324FDCFA39411CA2CEA /* AppKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AppKit.framework; path = /System/Library/Frameworks/AppKit.framework; sourceTree = "<absolute>"; };
 		29B97325FDCFA39411CA2CEA /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = /System/Library/Frameworks/Foundation.framework; sourceTree = "<absolute>"; };
-		3A85F5BA109373B6007143D7 /* French */ = {isa = PBXFileReference; fileEncoding = 10; lastKnownFileType = text.plist.strings; name = French; path = French.lproj/MoveApplication.strings; sourceTree = "<group>"; };
-		3A85F5BB109374A8007143D7 /* Spanish */ = {isa = PBXFileReference; fileEncoding = 10; lastKnownFileType = text.plist.strings; name = Spanish; path = Spanish.lproj/MoveApplication.strings; sourceTree = "<group>"; };
-		4D6F173F1100B52D00744BB5 /* German */ = {isa = PBXFileReference; fileEncoding = 10; lastKnownFileType = text.plist.strings; name = German; path = German.lproj/MoveApplication.strings; sourceTree = "<group>"; };
 		6317AB1D1068842E000355D9 /* Security.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Security.framework; path = /System/Library/Frameworks/Security.framework; sourceTree = "<absolute>"; };
-		6C39736010D54A3E00515EB3 /* Dutch */ = {isa = PBXFileReference; fileEncoding = 10; lastKnownFileType = text.plist.strings; name = Dutch; path = Dutch.lproj/MoveApplication.strings; sourceTree = "<group>"; };
-		82A196561794175C0067D44C /* cs */ = {isa = PBXFileReference; fileEncoding = 10; lastKnownFileType = text.plist.strings; name = cs; path = cs.lproj/MoveApplication.strings; sourceTree = "<group>"; };
-		8D1107310486CEB800E47090 /* LetsMove-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "LetsMove-Info.plist"; sourceTree = "<group>"; };
 		8D1107320486CEB800E47090 /* LetsMove.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = LetsMove.app; sourceTree = BUILT_PRODUCTS_DIR; };
-		A10D5AD2106C082200E53420 /* English */ = {isa = PBXFileReference; fileEncoding = 10; lastKnownFileType = text.plist.strings; name = English; path = English.lproj/MoveApplication.strings; sourceTree = "<group>"; };
-		A10D5BFB106C550F00E53420 /* Japanese */ = {isa = PBXFileReference; fileEncoding = 10; lastKnownFileType = text.plist.strings; name = Japanese; path = Japanese.lproj/MoveApplication.strings; sourceTree = "<group>"; };
-		A120E7F610630B160045BE3F /* PFMoveApplication.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PFMoveApplication.h; sourceTree = "<group>"; };
-		A120E7F710630B160045BE3F /* PFMoveApplication.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PFMoveApplication.m; sourceTree = "<group>"; };
-		A12AF6AF136E7D0100F0BC7D /* NSString+SymlinksAndAliases.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSString+SymlinksAndAliases.h"; sourceTree = "<group>"; };
-		A12AF6B0136E7D0100F0BC7D /* NSString+SymlinksAndAliases.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSString+SymlinksAndAliases.m"; sourceTree = "<group>"; };
-		A139021416FA4A8E001103D2 /* nb */ = {isa = PBXFileReference; fileEncoding = 10; lastKnownFileType = text.plist.strings; name = nb; path = nb.lproj/MoveApplication.strings; sourceTree = "<group>"; };
+		A120E7F610630B160045BE3F /* PFMoveApplication.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = PFMoveApplication.h; path = Source/PFMoveApplication.h; sourceTree = "<group>"; };
+		A120E7F710630B160045BE3F /* PFMoveApplication.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = PFMoveApplication.m; path = Source/PFMoveApplication.m; sourceTree = "<group>"; };
+		A12AF6AF136E7D0100F0BC7D /* NSString+SymlinksAndAliases.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "NSString+SymlinksAndAliases.h"; path = "Source/NSString+SymlinksAndAliases.h"; sourceTree = "<group>"; };
+		A12AF6B0136E7D0100F0BC7D /* NSString+SymlinksAndAliases.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "NSString+SymlinksAndAliases.m"; path = "Source/NSString+SymlinksAndAliases.m"; sourceTree = "<group>"; };
 		A1A4C5A8106760B100AF3142 /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = README.md; sourceTree = "<group>"; };
-		A1B3A84D11290C9600A72428 /* Danish */ = {isa = PBXFileReference; fileEncoding = 10; lastKnownFileType = text.plist.strings; name = Danish; path = Danish.lproj/MoveApplication.strings; sourceTree = "<group>"; };
-		A1C2C5DE15B9E9160075D09D /* Portuguese */ = {isa = PBXFileReference; fileEncoding = 10; lastKnownFileType = text.plist.strings; name = Portuguese; path = Portuguese.lproj/MoveApplication.strings; sourceTree = "<group>"; };
-		A1C2C5E015B9E9710075D09D /* pt-BR */ = {isa = PBXFileReference; fileEncoding = 10; lastKnownFileType = text.plist.strings; name = "pt-BR"; path = "pt-BR.lproj/MoveApplication.strings"; sourceTree = "<group>"; };
-		A1C56A0711EAB56A00579B0C /* Italian */ = {isa = PBXFileReference; fileEncoding = 10; lastKnownFileType = text.plist.strings; name = Italian; path = Italian.lproj/MoveApplication.strings; sourceTree = "<group>"; };
-		FFA30E7310C401D000AC7AC8 /* Russian */ = {isa = PBXFileReference; fileEncoding = 10; lastKnownFileType = text.plist.strings; name = Russian; path = Russian.lproj/MoveApplication.strings; sourceTree = "<group>"; };
+		C40962C3189ABDFC00714DAC /* Dutch */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = Dutch; path = Resources/Dutch.lproj/MoveApplication.strings; sourceTree = "<group>"; };
+		C40962C4189ABE0400714DAC /* English */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = English; path = Resources/English.lproj/MoveApplication.strings; sourceTree = "<group>"; };
+		C427A5DA189ABE22002BC69C /* French */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = French; path = Resources/French.lproj/MoveApplication.strings; sourceTree = "<group>"; };
+		C427A5DB189ABE29002BC69C /* German */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = German; path = Resources/German.lproj/MoveApplication.strings; sourceTree = "<group>"; };
+		C427A5DC189ABE2E002BC69C /* Italian */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = Italian; path = Resources/Italian.lproj/MoveApplication.strings; sourceTree = "<group>"; };
+		C427A5DD189ABE34002BC69C /* Japanese */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = Japanese; path = Resources/Japanese.lproj/MoveApplication.strings; sourceTree = "<group>"; };
+		C427A5DE189ABE38002BC69C /* ko */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ko; path = Resources/ko.lproj/MoveApplication.strings; sourceTree = "<group>"; };
+		C427A5DF189ABE3E002BC69C /* nb */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = nb; path = Resources/nb.lproj/MoveApplication.strings; sourceTree = "<group>"; };
+		C427A5E0189ABE42002BC69C /* Portuguese */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = Portuguese; path = Resources/Portuguese.lproj/MoveApplication.strings; sourceTree = "<group>"; };
+		C427A5E1189ABE45002BC69C /* pt-BR */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "pt-BR"; path = "Resources/pt-BR.lproj/MoveApplication.strings"; sourceTree = "<group>"; };
+		C427A5E2189ABE4A002BC69C /* Russian */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = Russian; path = Resources/Russian.lproj/MoveApplication.strings; sourceTree = "<group>"; };
+		C427A5E3189ABE4D002BC69C /* Spanish */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = Spanish; path = Resources/Spanish.lproj/MoveApplication.strings; sourceTree = "<group>"; };
+		C427A5E4189ABE52002BC69C /* zh-Hans */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hans"; path = "Resources/zh-Hans.lproj/MoveApplication.strings"; sourceTree = "<group>"; };
+		C4DDD8E21892B28C00FCACF5 /* PFMoveApplication.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = PFMoveApplication.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		C4DDD8E31892B28C00FCACF5 /* Cocoa.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Cocoa.framework; path = System/Library/Frameworks/Cocoa.framework; sourceTree = SDKROOT; };
+		C4DDD8F41892B28C00FCACF5 /* XCTest.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = XCTest.framework; path = Library/Frameworks/XCTest.framework; sourceTree = DEVELOPER_DIR; };
+		C4DDD90C1892B31D00FCACF5 /* Security.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Security.framework; path = System/Library/Frameworks/Security.framework; sourceTree = SDKROOT; };
+		C4E15662189ABDCB0083864B /* cs */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = cs; path = Resources/cs.lproj/MoveApplication.strings; sourceTree = "<group>"; };
+		C4E15664189ABDD20083864B /* Danish */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = Danish; path = Resources/Danish.lproj/MoveApplication.strings; sourceTree = "<group>"; };
+		C4E90322189ABD1700B37DC5 /* LetsMoveAppDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = LetsMoveAppDelegate.h; path = TestApp/LetsMoveAppDelegate.h; sourceTree = "<group>"; };
+		C4E90324189ABD3D00B37DC5 /* LetsMove-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = "LetsMove-Info.plist"; path = "TestApp/LetsMove-Info.plist"; sourceTree = "<group>"; };
+		C4E90327189ABD4500B37DC5 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = TestApp/Resources/en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		C4E90329189ABD4500B37DC5 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = TestApp/Resources/en.lproj/MainMenu.xib; sourceTree = "<group>"; };
+		C4E9032A189ABD4500B37DC5 /* ru */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = ru; path = TestApp/Resources/ru.lproj/MainMenu.xib; sourceTree = "<group>"; };
+		C4E9032D189ABD7200B37DC5 /* LetsMoveApp-Prefix.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "LetsMoveApp-Prefix.pch"; path = "Framework/LetsMoveApp-Prefix.pch"; sourceTree = "<group>"; };
+		C4E9032E189ABD7200B37DC5 /* PFMoveApplication-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = "PFMoveApplication-Info.plist"; path = "Framework/PFMoveApplication-Info.plist"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -59,8 +96,18 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C4E8788718995000005BFCF5 /* PFMoveApplication.framework in Frameworks */,
 				8D11072F0486CEB800E47090 /* Cocoa.framework in Frameworks */,
 				6317AB1E1068842E000355D9 /* Security.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		C4DDD8DE1892B28C00FCACF5 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				C4DDD90D1892B31D00FCACF5 /* Security.framework in Frameworks */,
+				C4DDD8E41892B28C00FCACF5 /* Cocoa.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -72,8 +119,6 @@
 			children = (
 				A120E7F610630B160045BE3F /* PFMoveApplication.h */,
 				A120E7F710630B160045BE3F /* PFMoveApplication.m */,
-				256AC3D80F4B6AC300CF3369 /* LetsMoveAppDelegate.h */,
-				256AC3D90F4B6AC300CF3369 /* LetsMoveAppDelegate.m */,
 				A12AF6AF136E7D0100F0BC7D /* NSString+SymlinksAndAliases.h */,
 				A12AF6B0136E7D0100F0BC7D /* NSString+SymlinksAndAliases.m */,
 			);
@@ -103,6 +148,7 @@
 			isa = PBXGroup;
 			children = (
 				8D1107320486CEB800E47090 /* LetsMove.app */,
+				C4DDD8E21892B28C00FCACF5 /* PFMoveApplication.framework */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -110,46 +156,81 @@
 		29B97314FDCFA39411CA2CEA /* LetsMove */ = {
 			isa = PBXGroup;
 			children = (
-				A1A4C5A8106760B100AF3142 /* README.md */,
+				C4E90320189ABC7800B37DC5 /* App */,
+				C4E90321189ABC7E00B37DC5 /* Framework */,
 				080E96DDFE201D6D7F000001 /* Classes */,
-				29B97315FDCFA39411CA2CEA /* Other Sources */,
-				29B97317FDCFA39411CA2CEA /* Resources */,
 				29B97323FDCFA39411CA2CEA /* Frameworks */,
+				A1A4C5A8106760B100AF3142 /* README.md */,
 				19C28FACFE9D520D11CA2CBB /* Products */,
 			);
 			name = LetsMove;
 			sourceTree = "<group>";
 		};
-		29B97315FDCFA39411CA2CEA /* Other Sources */ = {
-			isa = PBXGroup;
-			children = (
-				256AC3F00F4B6AF500CF3369 /* LetsMove_Prefix.pch */,
-				29B97316FDCFA39411CA2CEA /* main.m */,
-			);
-			name = "Other Sources";
-			sourceTree = "<group>";
-		};
-		29B97317FDCFA39411CA2CEA /* Resources */ = {
-			isa = PBXGroup;
-			children = (
-				8D1107310486CEB800E47090 /* LetsMove-Info.plist */,
-				089C165CFE840E0CC02AAC07 /* InfoPlist.strings */,
-				A10D5AD1106C082200E53420 /* MoveApplication.strings */,
-				1DDD58140DA1D0A300B32029 /* MainMenu.xib */,
-			);
-			name = Resources;
-			sourceTree = "<group>";
-		};
 		29B97323FDCFA39411CA2CEA /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				C4DDD90C1892B31D00FCACF5 /* Security.framework */,
 				1058C7A0FEA54F0111CA2CBB /* Linked Frameworks */,
+				C4DDD8E31892B28C00FCACF5 /* Cocoa.framework */,
+				C4DDD8F41892B28C00FCACF5 /* XCTest.framework */,
 				1058C7A2FEA54F0111CA2CBB /* Other Frameworks */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
+		C4E90320189ABC7800B37DC5 /* App */ = {
+			isa = PBXGroup;
+			children = (
+				C4E90323189ABD2800B37DC5 /* Supporting Files */,
+				256AC3F00F4B6AF500CF3369 /* LetsMove_Prefix.pch */,
+				C4E90322189ABD1700B37DC5 /* LetsMoveAppDelegate.h */,
+				256AC3D90F4B6AC300CF3369 /* LetsMoveAppDelegate.m */,
+				29B97316FDCFA39411CA2CEA /* main.m */,
+			);
+			name = App;
+			sourceTree = "<group>";
+		};
+		C4E90321189ABC7E00B37DC5 /* Framework */ = {
+			isa = PBXGroup;
+			children = (
+				C4E90331189ABD7500B37DC5 /* Resources */,
+				C4E9032D189ABD7200B37DC5 /* LetsMoveApp-Prefix.pch */,
+				C4E9032E189ABD7200B37DC5 /* PFMoveApplication-Info.plist */,
+			);
+			name = Framework;
+			sourceTree = "<group>";
+		};
+		C4E90323189ABD2800B37DC5 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				C4E90326189ABD4500B37DC5 /* InfoPlist.strings */,
+				C4E90328189ABD4500B37DC5 /* MainMenu.xib */,
+				C4E90324189ABD3D00B37DC5 /* LetsMove-Info.plist */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		C4E90331189ABD7500B37DC5 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				C4E15661189ABDCB0083864B /* MoveApplication.strings */,
+			);
+			name = Resources;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
+
+/* Begin PBXHeadersBuildPhase section */
+		C4DDD8DF1892B28C00FCACF5 /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				C4E9032F189ABD7200B37DC5 /* LetsMoveApp-Prefix.pch in Headers */,
+				C4DDD90A1892B2DC00FCACF5 /* PFMoveApplication.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXHeadersBuildPhase section */
 
 /* Begin PBXNativeTarget section */
 		8D1107260486CEB800E47090 /* LetsMove */ = {
@@ -158,17 +239,37 @@
 			buildPhases = (
 				8D11072C0486CEB800E47090 /* Sources */,
 				8D11072E0486CEB800E47090 /* Frameworks */,
+				C4E878881899502A005BFCF5 /* CopyFiles */,
 				8D1107290486CEB800E47090 /* Resources */,
 			);
 			buildRules = (
 			);
 			dependencies = (
+				C4E8788618994FEF005BFCF5 /* PBXTargetDependency */,
 			);
 			name = LetsMove;
 			productInstallPath = "$(HOME)/Applications";
 			productName = LetsMove;
 			productReference = 8D1107320486CEB800E47090 /* LetsMove.app */;
 			productType = "com.apple.product-type.application";
+		};
+		C4DDD8E11892B28C00FCACF5 /* PFMoveApplication */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = C4DDD9061892B28C00FCACF5 /* Build configuration list for PBXNativeTarget "PFMoveApplication" */;
+			buildPhases = (
+				C4DDD8DD1892B28C00FCACF5 /* Sources */,
+				C4DDD8DE1892B28C00FCACF5 /* Frameworks */,
+				C4DDD8DF1892B28C00FCACF5 /* Headers */,
+				C4DDD8E01892B28C00FCACF5 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = PFMoveApplication;
+			productName = LetsMoveApp;
+			productReference = C4DDD8E21892B28C00FCACF5 /* PFMoveApplication.framework */;
+			productType = "com.apple.product-type.framework";
 		};
 /* End PBXNativeTarget section */
 
@@ -198,12 +299,15 @@
 				ko,
 				nb,
 				cs,
+				en,
+				ru,
 			);
 			mainGroup = 29B97314FDCFA39411CA2CEA /* LetsMove */;
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
 				8D1107260486CEB800E47090 /* LetsMove */,
+				C4DDD8E11892B28C00FCACF5 /* PFMoveApplication */,
 			);
 		};
 /* End PBXProject section */
@@ -213,9 +317,17 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				8D11072B0486CEB800E47090 /* InfoPlist.strings in Resources */,
-				1DDD58160DA1D0A300B32029 /* MainMenu.xib in Resources */,
-				A10D5AD3106C082200E53420 /* MoveApplication.strings in Resources */,
+				C4E9032C189ABD4500B37DC5 /* MainMenu.xib in Resources */,
+				C4E9032B189ABD4500B37DC5 /* InfoPlist.strings in Resources */,
+				C4E90325189ABD3D00B37DC5 /* LetsMove-Info.plist in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		C4DDD8E01892B28C00FCACF5 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				C4E15663189ABDCB0083864B /* MoveApplication.strings in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -228,50 +340,66 @@
 			files = (
 				8D11072D0486CEB800E47090 /* main.m in Sources */,
 				256AC3DA0F4B6AC300CF3369 /* LetsMoveAppDelegate.m in Sources */,
-				A120E7F810630B160045BE3F /* PFMoveApplication.m in Sources */,
-				A12AF6B1136E7D0100F0BC7D /* NSString+SymlinksAndAliases.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		C4DDD8DD1892B28C00FCACF5 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				C4DDD9091892B2B500FCACF5 /* NSString+SymlinksAndAliases.m in Sources */,
+				C4DDD9081892B2B000FCACF5 /* PFMoveApplication.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
 
+/* Begin PBXTargetDependency section */
+		C4E8788618994FEF005BFCF5 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = C4DDD8E11892B28C00FCACF5 /* PFMoveApplication */;
+			targetProxy = C4E8788518994FEF005BFCF5 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
 /* Begin PBXVariantGroup section */
-		089C165CFE840E0CC02AAC07 /* InfoPlist.strings */ = {
+		C4E15661189ABDCB0083864B /* MoveApplication.strings */ = {
 			isa = PBXVariantGroup;
 			children = (
-				089C165DFE840E0CC02AAC07 /* English */,
+				C4E15662189ABDCB0083864B /* cs */,
+				C4E15664189ABDD20083864B /* Danish */,
+				C40962C3189ABDFC00714DAC /* Dutch */,
+				C40962C4189ABE0400714DAC /* English */,
+				C427A5DA189ABE22002BC69C /* French */,
+				C427A5DB189ABE29002BC69C /* German */,
+				C427A5DC189ABE2E002BC69C /* Italian */,
+				C427A5DD189ABE34002BC69C /* Japanese */,
+				C427A5DE189ABE38002BC69C /* ko */,
+				C427A5DF189ABE3E002BC69C /* nb */,
+				C427A5E0189ABE42002BC69C /* Portuguese */,
+				C427A5E1189ABE45002BC69C /* pt-BR */,
+				C427A5E2189ABE4A002BC69C /* Russian */,
+				C427A5E3189ABE4D002BC69C /* Spanish */,
+				C427A5E4189ABE52002BC69C /* zh-Hans */,
+			);
+			name = MoveApplication.strings;
+			sourceTree = "<group>";
+		};
+		C4E90326189ABD4500B37DC5 /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				C4E90327189ABD4500B37DC5 /* en */,
 			);
 			name = InfoPlist.strings;
 			sourceTree = "<group>";
 		};
-		1DDD58140DA1D0A300B32029 /* MainMenu.xib */ = {
+		C4E90328189ABD4500B37DC5 /* MainMenu.xib */ = {
 			isa = PBXVariantGroup;
 			children = (
-				1DDD58150DA1D0A300B32029 /* English */,
+				C4E90329189ABD4500B37DC5 /* en */,
+				C4E9032A189ABD4500B37DC5 /* ru */,
 			);
 			name = MainMenu.xib;
-			sourceTree = "<group>";
-		};
-		A10D5AD1106C082200E53420 /* MoveApplication.strings */ = {
-			isa = PBXVariantGroup;
-			children = (
-				A10D5AD2106C082200E53420 /* English */,
-				A1B3A84D11290C9600A72428 /* Danish */,
-				6C39736010D54A3E00515EB3 /* Dutch */,
-				3A85F5BA109373B6007143D7 /* French */,
-				4D6F173F1100B52D00744BB5 /* German */,
-				A1C56A0711EAB56A00579B0C /* Italian */,
-				A10D5BFB106C550F00E53420 /* Japanese */,
-				FFA30E7310C401D000AC7AC8 /* Russian */,
-				3A85F5BB109374A8007143D7 /* Spanish */,
-				257C4710141B40250087919D /* zh-Hans */,
-				A1C2C5DE15B9E9160075D09D /* Portuguese */,
-				A1C2C5E015B9E9710075D09D /* pt-BR */,
-				0115ACB116F0A5170050AD83 /* ko */,
-				A139021416FA4A8E001103D2 /* nb */,
-				82A196561794175C0067D44C /* cs */,
-			);
-			name = MoveApplication.strings;
 			sourceTree = "<group>";
 		};
 /* End PBXVariantGroup section */
@@ -287,8 +415,8 @@
 				GCC_MODEL_TUNING = G5;
 				GCC_OPTIMIZATION_LEVEL = 0;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
-				GCC_PREFIX_HEADER = LetsMove_Prefix.pch;
-				INFOPLIST_FILE = "LetsMove-Info.plist";
+				GCC_PREFIX_HEADER = TestApp/LetsMove_Prefix.pch;
+				INFOPLIST_FILE = "TestApp/LetsMove-Info.plist";
 				INSTALL_PATH = "$(HOME)/Applications";
 				PRODUCT_NAME = LetsMove;
 			};
@@ -302,8 +430,8 @@
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				GCC_MODEL_TUNING = G5;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
-				GCC_PREFIX_HEADER = LetsMove_Prefix.pch;
-				INFOPLIST_FILE = "LetsMove-Info.plist";
+				GCC_PREFIX_HEADER = TestApp/LetsMove_Prefix.pch;
+				INFOPLIST_FILE = "TestApp/LetsMove-Info.plist";
 				INSTALL_PATH = "$(HOME)/Applications";
 				PRODUCT_NAME = LetsMove;
 			};
@@ -365,6 +493,80 @@
 			};
 			name = Release;
 		};
+		C4DDD9021892B28C00FCACF5 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LIBRARY = "compiler-default";
+				CLANG_ENABLE_OBJC_ARC = NO;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COMBINE_HIDPI_IMAGES = YES;
+				COPY_PHASE_STRIP = NO;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				FRAMEWORK_VERSION = A;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_ENABLE_OBJC_EXCEPTIONS = YES;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "Framework/LetsMoveApp-Prefix.pch";
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				INFOPLIST_FILE = "Framework/PFMoveApplication-Info.plist";
+				MACOSX_DEPLOYMENT_TARGET = 10.5;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = macosx;
+				WRAPPER_EXTENSION = framework;
+			};
+			name = Debug;
+		};
+		C4DDD9031892B28C00FCACF5 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LIBRARY = "compiler-default";
+				CLANG_ENABLE_OBJC_ARC = NO;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COMBINE_HIDPI_IMAGES = YES;
+				COPY_PHASE_STRIP = YES;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				ENABLE_NS_ASSERTIONS = NO;
+				FRAMEWORK_VERSION = A;
+				GCC_ENABLE_OBJC_EXCEPTIONS = YES;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "Framework/LetsMoveApp-Prefix.pch";
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				INFOPLIST_FILE = "Framework/PFMoveApplication-Info.plist";
+				MACOSX_DEPLOYMENT_TARGET = 10.5;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = macosx;
+				WRAPPER_EXTENSION = framework;
+			};
+			name = Release;
+		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -382,6 +584,15 @@
 			buildConfigurations = (
 				C01FCF4F08A954540054247B /* Debug */,
 				C01FCF5008A954540054247B /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		C4DDD9061892B28C00FCACF5 /* Build configuration list for PBXNativeTarget "PFMoveApplication" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				C4DDD9021892B28C00FCACF5 /* Debug */,
+				C4DDD9031892B28C00FCACF5 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;

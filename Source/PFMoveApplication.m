@@ -15,16 +15,17 @@
 #import <sys/mount.h>
 
 // Strings
-// These are macros to be able to use custom i18n tools
-#define _I10NS(nsstr) NSLocalizedStringFromTable(nsstr, @"MoveApplication", nil)
-#define kStrMoveApplicationCouldNotMove _I10NS(@"Could not move to Applications folder")
-#define kStrMoveApplicationQuestionTitle  _I10NS(@"Move to Applications folder?")
-#define kStrMoveApplicationQuestionTitleHome _I10NS(@"Move to Applications folder in your Home folder?")
-#define kStrMoveApplicationQuestionMessage _I10NS(@"I can move myself to the Applications folder if you'd like.")
-#define kStrMoveApplicationButtonMove _I10NS(@"Move to Applications Folder")
-#define kStrMoveApplicationButtonDoNotMove _I10NS(@"Do Not Move")
-#define kStrMoveApplicationQuestionInfoWillRequirePasswd _I10NS(@"Note that this will require an administrator password.")
-#define kStrMoveApplicationQuestionInfoInDownloadsFolder _I10NS(@"This will keep your Downloads folder uncluttered.")
+
+NSString *PFMoveApplicationErrorDomain = @"PFMoveApplicationDomain";
+
+static NSString *kStrMoveApplicationCouldNotMoveKey = @"Could not move to Applications folder";
+static NSString *kStrMoveApplicationQuestionTitleKey = @"Move to Applications folder?";
+static NSString *kStrMoveApplicationQuestionTitleHomeKey = @"Move to Applications folder in your Home folder?";
+static NSString *kStrMoveApplicationQuestionMessageKey = @"I can move myself to the Applications folder if you'd like.";
+static NSString *kStrMoveApplicationButtonMoveKey = @"Move to Applications Folder";
+static NSString *kStrMoveApplicationButtonDoNotMoveKey = @"Do Not Move";
+static NSString *kStrMoveApplicationQuestionInfoWillRequirePasswdKey = @"Note that this will require an administrator password.";
+static NSString *kStrMoveApplicationQuestionInfoInDownloadsFolderKey = @"This will keep your Downloads folder uncluttered.";
 
 // Needs to be defined for compiling under 10.5 SDK
 #ifndef NSAppKitVersionNumber10_5
@@ -39,6 +40,10 @@
 
 static NSString *AlertSuppressKey = @"moveToApplicationsFolderAlertSuppress";
 
+const NSInteger PFMoveApplicationNoAuthCode = 1000;
+const NSInteger PFMoveApplicationTrashFailedCode = 1001;
+const NSInteger PFMoveApplicationCopyFailedCode = 1002;
+const NSInteger PFMoveApplicationCopyAuthFailedCode = 1003;
 
 // Helper functions
 static NSString *PreferredInstallLocation(BOOL *isUserDirectory);
@@ -53,16 +58,39 @@ static BOOL CopyBundle(NSString *srcPath, NSString *dstPath);
 static NSString *ShellQuotedString(NSString *string);
 static void Relaunch(NSString *destinationPath);
 
+static NSError *errorByCode(NSInteger code);
+static NSString *i18n(NSString *key);
+
 // Main worker function
-void PFMoveToApplicationsFolderIfNecessary(void) {
+PFMoveApplicationResult PFMoveToApplicationsFolderIfNecessary(NSError **pError) {
 	// Skip if user suppressed the alert before
-	if ([[NSUserDefaults standardUserDefaults] boolForKey:AlertSuppressKey]) return;
+    if (pError)
+        *pError = nil;
+
+	if ([[NSUserDefaults standardUserDefaults] boolForKey:AlertSuppressKey]) {
+        return PFMoveApplicationDisabled;
+    }
 
 	// Path of the bundle
 	NSString *bundlePath = [[NSBundle mainBundle] bundlePath];
 
 	// Skip if the application is already in some Applications folder
-	if (IsInApplicationsFolder(bundlePath)) return;
+	if (IsInApplicationsFolder(bundlePath))
+        return PFMoveApplicationNotNecessary;
+
+    NSError __block **outError = pError;
+    void (^setError)(NSInteger ) = ^(NSInteger code){
+        if (outError)
+            *outError = errorByCode(code);
+    };
+
+    dispatch_block_t showFailureAlert = ^() {
+		// Show failure message
+		NSAlert *alert = [[[NSAlert alloc] init] autorelease];
+		[alert setMessageText:i18n(kStrMoveApplicationCouldNotMoveKey)];
+		[alert runModal];
+    };
+
 
 	// File Manager
 	NSFileManager *fm = [NSFileManager defaultManager];
@@ -87,27 +115,27 @@ void PFMoveToApplicationsFolderIfNecessary(void) {
 	{
 		NSString *informativeText = nil;
 
-		[alert setMessageText:(installToUserApplications ? kStrMoveApplicationQuestionTitleHome : kStrMoveApplicationQuestionTitle)];
+		[alert setMessageText:i18n((installToUserApplications ? kStrMoveApplicationQuestionTitleHomeKey : kStrMoveApplicationQuestionTitleKey))];
 
-		informativeText = kStrMoveApplicationQuestionMessage;
+		informativeText = i18n(kStrMoveApplicationQuestionMessageKey);
 
 		if (needAuthorization) {
 			informativeText = [informativeText stringByAppendingString:@" "];
-			informativeText = [informativeText stringByAppendingString:kStrMoveApplicationQuestionInfoWillRequirePasswd];
+			informativeText = [informativeText stringByAppendingString:i18n(kStrMoveApplicationQuestionInfoWillRequirePasswdKey)];
 		}
 		else if (IsInDownloadsFolder(bundlePath)) {
 			// Don't mention this stuff if we need authentication. The informative text is long enough as it is in that case.
 			informativeText = [informativeText stringByAppendingString:@" "];
-			informativeText = [informativeText stringByAppendingString:kStrMoveApplicationQuestionInfoInDownloadsFolder];
+			informativeText = [informativeText stringByAppendingString:i18n(kStrMoveApplicationQuestionInfoInDownloadsFolderKey)];
 		}
 
 		[alert setInformativeText:informativeText];
 
 		// Add accept button
-		[alert addButtonWithTitle:kStrMoveApplicationButtonMove];
+		[alert addButtonWithTitle:i18n(kStrMoveApplicationButtonMoveKey)];
 
 		// Add deny button
-		NSButton *cancelButton = [alert addButtonWithTitle:kStrMoveApplicationButtonDoNotMove];
+		NSButton *cancelButton = [alert addButtonWithTitle:i18n(kStrMoveApplicationButtonDoNotMoveKey)];
 		[cancelButton setKeyEquivalent:@"\e"];
 
 		// Setup suppression button
@@ -134,12 +162,14 @@ void PFMoveToApplicationsFolderIfNecessary(void) {
 			if (!AuthorizedInstall(bundlePath, destinationPath, &authorizationCanceled)) {
 				if (authorizationCanceled) {
 					NSLog(@"INFO -- Not moving because user canceled authorization");
-					return;
+                    setError(PFMoveApplicationNoAuthCode);
 				}
 				else {
 					NSLog(@"ERROR -- Could not copy myself to /Applications with authorization");
-					goto fail;
+                    setError(PFMoveApplicationCopyAuthFailedCode);
+					showFailureAlert();
 				}
+                return PFMoveApplicationFailed;
 			}
 		}
 		else {
@@ -154,13 +184,19 @@ void PFMoveToApplicationsFolderIfNecessary(void) {
 				}
 				else {
 					if (!Trash([applicationsDirectory stringByAppendingPathComponent:bundleName]))
-						goto fail;
+                    {
+                        setError(PFMoveApplicationTrashFailedCode);
+						showFailureAlert();
+                        return PFMoveApplicationFailed;
+                    }
 				}
 			}
 
  			if (!CopyBundle(bundlePath, destinationPath)) {
 				NSLog(@"ERROR -- Could not copy myself to %@", destinationPath);
-				goto fail;
+                setError(PFMoveApplicationCopyFailedCode);
+				showFailureAlert();
+                return PFMoveApplicationFailed;
 			}
 		}
 
@@ -187,17 +223,10 @@ void PFMoveToApplicationsFolderIfNecessary(void) {
 	// Save the alert suppress preference if checked
 	else if ([[alert suppressionButton] state] == NSOnState) {
 		[[NSUserDefaults standardUserDefaults] setBool:YES forKey:AlertSuppressKey];
+        return PFMoveApplicationDisabled;
 	}
 
-	return;
-
-fail:
-	{
-		// Show failure message
-		alert = [[[NSAlert alloc] init] autorelease];
-		[alert setMessageText:kStrMoveApplicationCouldNotMove];
-		[alert runModal];
-	}
+	return PFMoveApplicationSucceeded;
 }
 
 #pragma mark -
@@ -479,4 +508,32 @@ static void Relaunch(NSString *destinationPath) {
 	NSString *script = [NSString stringWithFormat:@"(while /bin/kill -0 %d >&/dev/null; do /bin/sleep 0.1; done; %@; /usr/bin/open %@) &", pid, preOpenCmd, quotedDestinationPath];
 
 	[NSTask launchedTaskWithLaunchPath:@"/bin/sh" arguments:[NSArray arrayWithObjects:@"-c", script, nil]];
+}
+
+static NSString *i18n(NSString *key) {
+    return [[NSBundle bundleWithIdentifier:@"net.vhbit.PFMoveApplication"] localizedStringForKey:key value:@"" table:@"MoveApplication"];
+}
+
+static NSError *errorByCode(NSInteger code) {
+    NSString *description = nil;
+    switch(code) {
+        case PFMoveApplicationCopyAuthFailedCode:
+            description = @"Failed to copy bundle after authorization";
+            break;
+        case PFMoveApplicationCopyFailedCode:
+            description = @"Failed to copy bundle";
+            break;
+        case PFMoveApplicationTrashFailedCode:
+            description = @"Failed to trash existing item";
+            break;
+        case PFMoveApplicationNoAuthCode:
+            description = @"Authorization cancelled";
+            break;
+        default:
+            description = @"Unknown error code";
+            break;
+    }
+
+    return [NSError errorWithDomain:PFMoveApplicationErrorDomain code:code
+                           userInfo:@{NSLocalizedDescriptionKey: description}];
 }
